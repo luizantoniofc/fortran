@@ -1,5 +1,3 @@
-*   TD 1 Fortran
-*   Luiz Antônio Ferreira da Cruz
         program TD1
             implicit none
             integer i, np
@@ -48,3 +46,4 @@
             print*, "Coefficient de correlation (r):", cc
 
         end program
+
