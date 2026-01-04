@@ -7,7 +7,7 @@
             real, dimension(:), allocatable :: vetor_y, vetor_x
             real, dimension(:,:), allocatable :: matriz_a
 
-            print*, "Dimension du Système Linéaire (N):"
+            print*, "Dimension du SystÃ¨me LinÃ©aire (N):"
             read*, n
 
             allocate(matriz_a(n,n), vetor_y(n), vetor_x(n))
@@ -18,10 +18,10 @@
             call resolution(n, vetor_x, vetor_y, matriz_a)
             call ecrite(n, vetor_x, vetor_y, matriz_a)
 
-            print*, "Solução X:", vetor_x
+            print*, "SoluÃ§Ã£o X:", vetor_x
 
         ! ----------------------------------------------------
-        ! eu separo o programa principal das subroutines
+        ! SÃ©parez le programme principal des subroutine 
         ! ----------------------------------------------------
         contains
 
@@ -33,14 +33,14 @@
                 integer m, p, h
 
 
-            ! créer la matrice
+            ! crÃ©er la matrice
                 do m = 1, n
                     do p = 1, n
                     print*, "Element de la matrice: A(", m, ",", p, "):"
                     read*, matriz_a(m,p)
                     enddo
                 enddo
-            ! créer le vecteur y
+            ! crÃ©er le vecteur y
                 print*, "Vecteur y:"
                 do h = 1, n
                     print*, "y(", h,")"
@@ -79,7 +79,7 @@
 
             end subroutine triangularisation
 
-            ! 2° balayge
+            ! 2Â° balayge
             subroutine resolution(n, vetor_x, vetor_y, matriz_a)
                 integer, intent(in) :: n
                 real, dimension(n), intent(out) :: vetor_x
@@ -111,13 +111,13 @@
                 character(len=50) :: nome_arquivo
 
                 print*, "Saisissez le nom de le fichier pour enregistrer
-     +           le résultat:"
+     +           le rÃ©sultat:"
                 read*, nome_arquivo
                 unidade = 10
 
                 open(unit=unidade, file=nome_arquivo, status='unknown')
 
-                write(unidade, *) "Résultats de la méthode de Gauss"
+                write(unidade, *) "RÃ©sultats de la mÃ©thode de Gauss"
                 write(unidade, *) "Dimensions du systme (N): ", n
                 write(unidade, *)
                 write(unidade, *) '----------------------'
@@ -127,8 +127,9 @@
                     write(unidade, *) "X", i, "=", vetor_x(i)
                 enddo
                 close(unit=unidade)
-                print*, "Données enregistrées avec succès dans le
+                print*, "DonnÃ©es enregistrÃ©es avec succÃ¨s dans le
 
-     +          fichier : ", nome_arquivo
+     +          fichierÂ : ", nome_arquivo
             endsubroutine
         end program TD2
+
